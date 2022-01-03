@@ -21,7 +21,6 @@ async def on_ready():
 async def on_message(message):
     message_content=message.content
     bad=message_content.find("윤정")
-    print(bad)
     if bad>=0:
         await message.channel.send("금기어 입니다.")
         await message.delete()
