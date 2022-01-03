@@ -17,7 +17,7 @@ async def on_ready():
   
   print("봇 이름:",client.user.name,"봇 아이디:",client.user.id,"봇 버전:",discord.__version__)
 
-@bot.event
+@client.event
 async def on_message(message):
     message_content=message.content
     bad=message_content.find("윤정")
@@ -25,7 +25,7 @@ async def on_message(message):
     if bad>=0:
         await message.channel.send("금기어 입니다.")
         await message.delete()
-    await bot.process_commands(message)
+    await client.process_commands(message)
 
 client.run(os.environ['token'])
 
