@@ -20,7 +20,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     message_content=message.content
-    bad=message_content.find("윤정")
+    bad=message_content.find("윤정" or "윤1정" or "윤2정" or "윤3정" or "유ㄴ정")
     if bad>=0:
         await message.channel.send("금기어 입니다.")
         await message.delete()
