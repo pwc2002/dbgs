@@ -23,8 +23,9 @@ async def on_message(message):
     # bad=message_content.find("윤정" or "윤1정" or "윤2정" or "윤3정" or "유ㄴ정")
     a = message_content.find("윤")
     b = message_content.find("정")
+    c = message_content.find("윰정")
     word_list = ["느"]
-    if a>=0 and b>=0:
+    if (a>=0 and b>=0) or c>=0:
         await message.channel.send("금기어 입니다.")
         await message.delete()
     await client.process_commands(message)
